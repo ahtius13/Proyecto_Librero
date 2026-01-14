@@ -3,7 +3,7 @@ Proyecto para fin de curso A2 Python
 
 ## 1. Gestión del inventario de libros
 
-Descripción: Cada libro debe tener la siguiente información:
+**Descripción:** Cada libro debe tener la siguiente información:
 
  -Título
 
@@ -21,7 +21,7 @@ Descripción: Cada libro debe tener la siguiente información:
 
  -Fecha de préstamo (puede ser Null)
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
 Añadir un libro nuevo al inventario
 
@@ -33,7 +33,7 @@ Consultar libros (por título, autor o editorial)
 
 Mostrar todos los libros disponibles
 
-**Pruebas (testing)**
+### **Pruebas (testing)**
 
 Comprobar que no se pueden crear dos libros con el mismo código
 
@@ -45,7 +45,7 @@ Verificar que no se puede vender o prestar un libro sin stock
 
 ## 2. Gestión de socios
 
-Cada socio debe tener la siguiente información:
+**Descripción:** Cada socio debe tener la siguiente información:
 
  -Nombre
 
@@ -81,9 +81,9 @@ Mostrar la lista completa de socios
 
 ## 3. Sistema de préstamos
 
-Descripción: El sistema tendrá que controlar los préstamos de las distribuidoras y controlar si un artículo hay que devolverlo a distribución si ha superado el tiempo límite.
+**Descripción:** El sistema tendrá que controlar los préstamos de las distribuidoras y controlar si un artículo hay que devolverlo a distribución si ha superado el tiempo límite.
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
  -Registrar un préstamo de uno o varios libros.
 
@@ -93,7 +93,7 @@ Descripción: El sistema tendrá que controlar los préstamos de las distribuido
 
  -Detectar préstamos que están finalizados.
 
-**Pruebas (testing)**
+### **Pruebas (testing)**
 
 Verificar que se incrementa el inventario al registrar préstamos.
 
@@ -103,13 +103,13 @@ Verificar que el sistema detecta los préstamos a devolver.
 
 ## 4. Devolución de préstamos
 
-Descripción: Se deben gestionar las devoluciones de libros prestados.
+**Descripción:** Se deben gestionar las devoluciones de libros prestados.
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
  -Devolver libros prestados
 
-**Pruebas (testing)**
+### **Pruebas (testing)**
 
 Verificar que al devolver un libro a Editorial disminuye el stock
 
@@ -118,7 +118,7 @@ Comprobar que la fecha de préstamo se elimina o se marca como finalizada
 
 ## 5. Sistema de ventas
 
-Descripción: El sistema permitirá la venta de libros a usuarios.
+**Descripción:** El sistema permitirá la venta de libros a usuarios.
 
 Características:
 
@@ -128,7 +128,7 @@ Los socios tienen un descuento X %
 
 La venta reduce el stock del inventario
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
  -Registrar una venta
 
@@ -138,7 +138,7 @@ La venta reduce el stock del inventario
 
  -Actualizar el inventario
 
-**Pruebas (testing)**
+### **Pruebas (testing)**
 
  -Comprobar que el descuento solo se aplica a socios
 
@@ -150,7 +150,7 @@ La venta reduce el stock del inventario
 
 ## 6. Sistema de preventas
 
-Descripción: Las preventas tienen las siguientes condiciones:
+**Descripción:** Las preventas tienen las siguientes condiciones:
 
 Solo disponibles para socios
 
@@ -158,7 +158,7 @@ Libros con fecha de salida 1 mes en el futuro
 
 Cantidad limitada disponible para preventa
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
  -Registrar una preventa
 
@@ -168,7 +168,7 @@ Cantidad limitada disponible para preventa
 
  -Controlar la cantidad disponible para preventa
 
-**Pruebas (testing)**
+### **Pruebas (testing)**
 
  -Verificar que un no socio no puede hacer preventas
 
@@ -178,7 +178,7 @@ Cantidad limitada disponible para preventa
 
 ## 7. Devolución de compras
 
-Descripción: El sistema permitirá devolver un libro comprado.
+**Descripción:** El sistema permitirá devolver un libro comprado.
 
 Condiciones:
 
@@ -186,7 +186,7 @@ El libro vuelve al inventario
 
 Se actualiza la cantidad disponible
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
  -Registrar una devolución de compra
 
@@ -194,7 +194,7 @@ Se actualiza la cantidad disponible
 
  -Verificar que el libro existe en el sistema
 
- **Pruebas (testing)**
+ ### **Pruebas (testing)**
 
  -Comprobar que el stock aumenta tras la devolución
 
