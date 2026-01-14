@@ -19,3 +19,7 @@ Ideas básicas:
 
 -devolución de compra: Devuelve al inventario un libro comprado por un Usuario
 
+-buscada de libros con las cantidades 
+
+Definición de Proyecto:
+
