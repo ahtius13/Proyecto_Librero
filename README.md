@@ -43,15 +43,15 @@ Proyecto para fin de curso A2 Python
 
  -Verificar que no se puede vender o prestar un libro sin stock
 
-## 2. Gestión de socios
+## 2. Gestión de usuarios
 
-**Descripción:** Cada socio debe tener la siguiente información:
+**Descripción:** Cada usuario debe tener la siguiente información:
 
  -Nombre
 
  -Apellido
 
- -Código de socio (único)
+ -Tipo de usuario (socio, no socio, o admin)
 
  -Dirección
 
