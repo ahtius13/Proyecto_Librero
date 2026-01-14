@@ -23,25 +23,25 @@ Proyecto para fin de curso A2 Python
 
 ### **Funcionalidades necesarias**
 
-Añadir un libro nuevo al inventario
+ -Añadir un libro nuevo al inventario
 
-Modificar los datos de un libro existente
+ -Modificar los datos de un libro existente
 
-Eliminar un libro del inventario
+ -Eliminar un libro del inventario
 
-Consultar libros (por título, autor o editorial)
+ -Consultar libros (por título, autor o editorial)
 
-Mostrar todos los libros disponibles
+ -Mostrar todos los libros disponibles
 
 ### **Pruebas (testing)**
 
-Comprobar que no se pueden crear dos libros con el mismo código
+ -Comprobar que no se pueden crear dos libros con el mismo código
 
-Verificar que un libro puede tener fecha de salida o fecha de préstamo en Null
+ -Verificar que un libro puede tener fecha de salida o fecha de préstamo en Null
 
-Comprobar que al vender o prestar un libro la cantidad se reduce correctamente
+ -Comprobar que al vender o prestar un libro la cantidad se reduce correctamente
 
-Verificar que no se puede vender o prestar un libro sin stock
+ -Verificar que no se puede vender o prestar un libro sin stock
 
 ## 2. Gestión de socios
 
@@ -59,15 +59,15 @@ Verificar que no se puede vender o prestar un libro sin stock
 
 **Funcionalidades necesarias**
 
-Añadir un nuevo socio
+ -Añadir un nuevo socio
 
-Modificar los datos de un socio
+ -Modificar los datos de un socio
 
-Eliminar un socio
+ -Eliminar un socio
 
-Consultar información de un socio
+ -Consultar información de un socio
 
-Mostrar la lista completa de socios
+ -Mostrar la lista completa de socios
 
 **Pruebas (testing)**
 
@@ -95,11 +95,11 @@ Mostrar la lista completa de socios
 
 ### **Pruebas (testing)**
 
-Verificar que se incrementa el inventario al registrar préstamos.
+ -Verificar que se incrementa el inventario al registrar préstamos.
 
-Comprobar que la fecha de préstamo se guarda correctamente
+ -Comprobar que la fecha de préstamo se guarda correctamente
 
-Verificar que el sistema detecta los préstamos a devolver.
+ -Verificar que el sistema detecta los préstamos a devolver.
 
 ## 4. Devolución de préstamos
 
@@ -111,9 +111,9 @@ Verificar que el sistema detecta los préstamos a devolver.
 
 ### **Pruebas (testing)**
 
-Verificar que al devolver un libro a Editorial disminuye el stock
+ -Verificar que al devolver un libro a Editorial disminuye el stock
 
-Comprobar que la fecha de préstamo se elimina o se marca como finalizada
+ -Comprobar que la fecha de préstamo se elimina o se marca como finalizada
 
 
 ## 5. Sistema de ventas
