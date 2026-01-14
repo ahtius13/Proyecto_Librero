@@ -5,7 +5,7 @@ Proyecto para fin de curso A2 Python
 
 Ideas básicas:
 
--implementa un inventario de libros: titulo, autor, código libro, editorial, precio, cantidad, fecha salida(Null), fecha prestamo(Null)
+-implementa un inventario de libros (solo dueño): titulo, autor, código libro, editorial, precio, cantidad, fecha salida(Null), fecha prestamo(Null)
 
 -lista socios: Nombre, apellido, código socio, dirección, tlf
 
@@ -19,7 +19,11 @@ Ideas básicas:
 
 -devolución de compra: Devuelve al inventario un libro comprado por un Usuario
 
--buscada de libros con las cantidades 
+-busqueda de libros con las cantidades (solo usuario)
 
 Definición de Proyecto:
 
+Esta es una API de gestión para Librerias, en la cual el dueño del local puede controlar su inventario con una especial atención al sistema de prestamos de las editoriales.
+Este sistema de prestamos permite visuavilizar los libros que otorga cada editorial, incluyendo una fecha de devolución que queda registrada para dar un aviso en el futuro. Este aviso incluye todos los libros disponibles para devolver, si no se han vendido, ordenados en cada una de sus respectivas editoriales.
+
+Otra funcionalidad de la API es la gestión de los usuarios
