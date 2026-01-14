@@ -21,9 +21,9 @@ Ideas básicas:
 
 -busqueda de libros con las cantidades (solo usuario)
 
-Definición de Proyecto:
+## Definición de Proyecto:
 
-Esta es una API de gestión para Librerias, en la cual el dueño del local puede controlar su inventario con una especial atención al sistema de prestamos de las editoriales.
+**Esta es una API de gestión para Librerias**, en la cual el dueño del local puede controlar su inventario con una especial atención al sistema de prestamos de las editoriales.
 Este sistema de prestamos permite visuavilizar los libros que otorga cada editorial, incluyendo una fecha de devolución que queda registrada para dar un aviso en el futuro. Este aviso incluye todos los libros disponibles para devolver, si no se han vendido, ordenados en cada una de sus respectivas editoriales.
 
-Otra funcionalidad de la API es la gestión de los usuarios
+Otra funcionalidad de la API es la gestión de los usuarios, permitiendo diferenciar entre el dueño, socios y clientes. 
