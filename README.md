@@ -57,7 +57,7 @@ Proyecto para fin de curso A2 Python
 
  -Teléfono
 
-**Funcionalidades necesarias**
+### **Funcionalidades necesarias**
 
  -Añadir un nuevo socio
 
@@ -69,7 +69,7 @@ Proyecto para fin de curso A2 Python
 
  -Mostrar la lista completa de socios
 
-**Pruebas (testing)**
+### **Pruebas (testing)**
 
  -Verificar que no se repiten códigos de socio
 
