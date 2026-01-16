@@ -1,30 +1,21 @@
-# Proyecto_Librero
-Proyecto para fin de curso A2 Python
-
-(Null) = permite que no tenga valor
-
-Ideas básicas:
-
--implementa un inventario de libros (solo dueño): titulo, autor, código libro, editorial, precio, cantidad, fecha salida(Null), fecha prestamo(Null)
-
--lista socios: Nombre, apellido, código socio, dirección, tlf
-
--sistema de prestamos: X libros con un tiempo de venta Y, los que queden se devuelven
-
--sistema de ventas: venta de libros a usuarios, si es socio x % descuento
-
--sistema de preventas: Solo socios, libros con fecha salida 1 mes en el futuro, X cantidad disponible
-
--devolucion del prestamo: Los libros que quedan por editorial cuya fecha de prestamo termina en 1 día
-
--devolución de compra: Devuelve al inventario un libro comprado por un Usuario
-
--busqueda de libros con las cantidades (solo usuario)
-
 ## Definición de Proyecto:
 
 **Esta es una API de gestión para Librerias**, en la cual el dueño del local puede controlar su inventario con una especial atención al sistema de prestamos de las editoriales, además de poder administrar los diferentes usuarios relacionandolos con las compras que realizan.
 
-El sistema de prestamos permite visuavilizar los libros que otorga cada editorial, incluyendo una fecha de devolución que queda registrada para dar un aviso en el futuro. Este aviso incluye todos los libros disponibles para devolver, si no se han vendido, ordenados en cada una de sus respectivas editoriales.
+### Administración de inventario y usuarios:
 
+Estos sistemas trabajan de la misma forma; con un CRUD de los distintos libros y de los diferentes usuarios en dos JSON diferentes.
+Los usuarios podrán realizar busquedas de libros, sin posibilidad de modificación del inventario.
+Los socios además de la busqueda podran precomprar libros que estarán a la venta en un futuro cercano.
+El dueño es el que tiene todos los permisos de administración y podrá realizar todo el CRUD tanto de los libros como de los usuarios.
+
+### Sistema de prestamos:
+
+El sistema de prestamos permite visuavilizar los libros que otorga cada editorial, incluyendo una fecha de devolución que queda registrada para dar un aviso en el futuro. Este aviso incluye todos los libros disponibles para devolver, si no se han vendido, ordenados en cada una de sus respectivas editoriales.
+Una vez se dé el visto bueno, la cantidad de libros será modificada en el inventario.
+
+### Sistema de ventas:
+
+El sistema de ventas modifica en el inventario la cantidad de libros comprados por un usuario, quedando registrada dicha compra.
+Tambien permite la devolución de dichas compras, modificando de nuevo el inventario.
 
