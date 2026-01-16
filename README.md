@@ -1,5 +1,5 @@
-Proyecto_Librero/
-│
+Proyecto_Librero/\n
+│\n
 ├── src/
 │   ├── libros.py
 │   ├── usuarios.py
