@@ -1,6 +1,6 @@
-Proyecto_Librero/\n
-│\n
-├── src/
+Proyecto_Librero/
+│ 
+├── src/ 
 │   ├── libros.py
 │   ├── usuarios.py
 │   ├── prestamos.py
