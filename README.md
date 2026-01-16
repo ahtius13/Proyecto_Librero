@@ -1,6 +1,6 @@
 Proyecto_Librero/
-│ 
-├── src/ 
+│
+├── src/
 │   ├── libros.py
 │   ├── usuarios.py
 │   ├── prestamos.py
@@ -16,7 +16,8 @@ Proyecto_Librero/
 │   ├── test_ventas.py
 │   ├── test_preventas.py
 │
-└── 
+└── pytest.ini
+
 # Proyecto Librería
 
 ## Definición de Proyecto:
