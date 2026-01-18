@@ -1,22 +1,22 @@
-Proyecto_Librero/
-│ 
-├── src/ 
-│   ├── libros.py 
-│   ├── usuarios.py 
-│   ├── prestamos.py 
-│   ├── ventas.py 
-│   ├── preventas.py 
-│   ├── main.py 
-│
-├── tests/ 
-│   ├── test_libros.py 
-│   ├── test_usuarios.py 
-│   ├── test_prestamos.py 
-│   ├── test_devoluciones.py 
-│   ├── test_ventas.py 
-│   ├── test_preventas.py 
-│ 
-└── pytest.ini
+ Proyecto_Librero/
+ │ 
+ ├── src/ 
+ │   ├── libros.py 
+ │   ├── usuarios.py 
+ │   ├── prestamos.py 
+ │   ├── ventas.py 
+ │   ├── preventas.py 
+ │   ├── main.py 
+ │
+ ├── tests/ 
+ │   ├── test_libros.py 
+ │   ├── test_usuarios.py 
+ │   ├── test_prestamos.py 
+ │   ├── test_devoluciones.py 
+ │   ├── test_ventas.py 
+ │   ├── test_preventas.py 
+ │ 
+ └── pytest.ini
 
 # Proyecto Librería
 
