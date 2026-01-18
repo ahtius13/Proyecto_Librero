@@ -6,7 +6,7 @@ def test_no_codigos_repetidos(inventario, libro):
     pass
 
 
-def test_fechas_pueden_ser_null(libro):
+def test_fecha_salida_posterior_actual(libro):
     pass
 
 
