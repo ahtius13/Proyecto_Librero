@@ -1,11 +1,7 @@
  Proyecto_Librero/
- 
  │
- 
  ├── src/ 
- 
  │   ├── libros.py 
- 
  │   ├── usuarios.py 
  │   ├── prestamos.py 
  │   ├── ventas.py 
