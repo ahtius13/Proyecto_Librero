@@ -1,21 +1,21 @@
 Proyecto_Librero/
+│ 
+├── src/ 
+│   ├── libros.py 
+│   ├── usuarios.py 
+│   ├── prestamos.py 
+│   ├── ventas.py 
+│   ├── preventas.py 
+│   ├── main.py 
 │
-├── src/
-│   ├── libros.py
-│   ├── usuarios.py
-│   ├── prestamos.py
-│   ├── ventas.py
-│   ├── preventas.py
-│   ├── main.py
-│
-├── tests/
-│   ├── test_libros.py
-│   ├── test_usuarios.py
-│   ├── test_prestamos.py
-│   ├── test_devoluciones.py
-│   ├── test_ventas.py
-│   ├── test_preventas.py
-│
+├── tests/ 
+│   ├── test_libros.py 
+│   ├── test_usuarios.py 
+│   ├── test_prestamos.py 
+│   ├── test_devoluciones.py 
+│   ├── test_ventas.py 
+│   ├── test_preventas.py 
+│ 
 └── pytest.ini
 
 # Proyecto Librería
@@ -30,11 +30,11 @@ Estos sistemas trabajan de la misma forma; con un CRUD de los distintos libros y
 
 Los usuarios podrán realizar busquedas de libros, sin posibilidad de modificación del inventario.
 
-Los socios además de la busqueda podran precomprar libros que estarán a la venta en un futuro cercano.
+Los socios además de la búsqueda podran precomprar libros que estarán a la venta en un futuro cercano.
 
-El dueño es el que tiene todos los permisos de administración y podrá realizar todo el CRUD tanto de los libros como de los usuarios.
+El dueño es el que tiene todos los permisos de administración y podrá realizar todas las funciones.
 
-### Sistema de prestamos:
+### Sistema de préstamos:
 
 El sistema de prestamos permite visuavilizar los libros que otorga cada editorial, incluyendo una fecha de devolución que queda registrada para dar un aviso en el futuro. Este aviso incluye todos los libros disponibles para devolver, si no se han vendido, ordenados en cada una de sus respectivas editoriales.
 
@@ -44,9 +44,9 @@ Una vez se dé el visto bueno, la cantidad de libros será modificada en el inve
 
 El sistema de ventas modifica en el inventario la cantidad de libros comprados por un usuario, quedando registrada dicha compra.
 
-Tambien permite la devolución de dichas compras, modificando de nuevo el inventario.
+También permite la devolución de dichas compras, modificando de nuevo el inventario.
 
-## Funciones y Testing
+# Funciones y Testing
 
 ## 1. Gestión del inventario de libros
 
@@ -70,25 +70,26 @@ Tambien permite la devolución de dichas compras, modificando de nuevo el invent
 
 ### **Funcionalidades necesarias**
 
- -Añadir un libro nuevo al inventario
+ -Registrar un libro nuevo al inventario
 
  -Modificar los datos de un libro existente
 
  -Eliminar un libro del inventario
 
- -Consultar libros (por título, autor o editorial)
+ -Consultar libros (por título, autor o editorial) --> Función de socio
 
- -Mostrar todos los libros disponibles
+ -Mostrar todos los libros disponibles --> Función de socio
 
 ### **Pruebas (testing)**
 
- -Comprobar que no se pueden crear dos libros con el mismo código
+ -Comprobar que no se pueden crear dos libros con el mismo código. Compara el código del libro con los del inventario para verificar
+ si coincide con alguno.
 
- -Verificar que un libro puede tener fecha de salida o fecha de préstamo en Null
+ -Verificar que el libro registrado no tenga una fecha de salida anterior a la actual.
 
- -Comprobar que al vender o prestar un libro la cantidad se reduce correctamente
+ -Comprobar que al vender o prestar un libro el campo cantidad se reduce correctamente.
 
- -Verificar que no se puede vender o prestar un libro sin stock
+ -Verificar que no se puede vender o prestar un libro sin stock.
 
 ## 2. Gestión de usuarios
 
@@ -97,6 +98,8 @@ Tambien permite la devolución de dichas compras, modificando de nuevo el invent
  -Nombre
 
  -Apellido
+
+ -Número de socio
 
  -Tipo de usuario (socio, no socio, o admin)
 
@@ -118,11 +121,11 @@ Tambien permite la devolución de dichas compras, modificando de nuevo el invent
 
 ### **Pruebas (testing)**
 
- -Verificar que no se repiten códigos de socio
+ -Verificar que no se repiten socios. Se compara su número de socio con el de la base de datos.
 
- -Comprobar que un socio se añade correctamente a la lista
+ -Comprobar que un socio se añade correctamente al archivo JSON.
 
- -Verificar que se puede modificar la información de un socio existente
+ -Verificar que se puede modificar la información de un socio existente.
 
  -Comprobar que al eliminar un socio deja de aparecer en el sistema
 
@@ -177,19 +180,12 @@ La venta reduce el stock del inventario
 
 ### **Funcionalidades necesarias**
 
- -Registrar una venta
+ -Comprar un libro (Aplicar descuento si el comprador es socio) --> Función de socio
 
- -Aplicar descuento si el comprador es socio
-
- -Calcular el precio final
-
- -Actualizar el inventario
 
 ### **Pruebas (testing)**
 
  -Comprobar que el descuento solo se aplica a socios
-
- -Verificar que el precio final es correcto
 
  -Comprobar que el stock se reduce tras la venta
 
@@ -207,21 +203,16 @@ Cantidad limitada disponible para preventa
 
 ### **Funcionalidades necesarias**
 
- -Registrar una preventa
-
- -Verificar que el usuario es socio
-
- -Comprobar la fecha de salida del libro
-
- -Controlar la cantidad disponible para preventa
+ -Reservar una preventa --> Función de socio
+ 
 
 ### **Pruebas (testing)**
 
- -Verificar que un no socio no puede hacer preventas
+ -Verificar que un no socio no puede hacer preventas.
 
- -Comprobar que solo se permiten libros con fecha futura
+ -Comprobar que solo se permiten libros con fecha futura.
 
- -Verificar que la cantidad disponible se controla correctamente
+ -Verificar que no deja realizar más reservas cuando la cantidad disponible llegue a 0.
 
 ## 7. Devolución de compras
 
@@ -237,14 +228,9 @@ Se actualiza la cantidad disponible
 
  -Registrar una devolución de compra
 
- -Actualizar el inventario
-
- -Verificar que el libro existe en el sistema
-
  ### **Pruebas (testing)**
 
  -Comprobar que el stock aumenta tras la devolución
 
  -Verificar que no se puede devolver un libro inexistente
 
- -Comprobar que la devolución se registra correctamente
