@@ -2,7 +2,7 @@ import pytest
 
 
 
-def test_stock_disminuye_al_devolver_a_editorial(gestor_prestamos):
+def test_stock_disminuye_al_devolver(gestor_prestamos):
     pass
 
 
