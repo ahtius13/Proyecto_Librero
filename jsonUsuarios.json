@@ -1,4 +1,4 @@
-
+El idUsuario hará referencia al tipo de usuario, siendo el id 1 para el admin y el 2 para el Cliente(anonimo), y a partir de 2 serian id reservados para socios siendo autoIncremental.
 [
     {
         "IdUsuario":1,

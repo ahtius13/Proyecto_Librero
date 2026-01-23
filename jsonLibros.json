@@ -2,7 +2,8 @@ Título
 
 -Autor
 
--Código del libro (único)
+-Código del libro (único): al crear un Libro el ISBN se incluira y no se creará, 
+de esta forma cuando se intente añadir a la entidad libros con un ISBN ya agregado, directamente se sumara la cantidad de dicho libro.
 
 -Editorial
 
