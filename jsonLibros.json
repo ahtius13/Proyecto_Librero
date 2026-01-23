@@ -1,0 +1,34 @@
+Título
+
+-Autor
+
+-Código del libro (único)
+
+-Editorial
+
+-Precio
+
+-Cantidad disponible
+
+-Fecha de salida (puede ser Null)
+
+-Fecha de préstamo (puede ser Null)
+[
+    {
+        "ISBN":"",
+
+        "Título":"El quijote",
+
+        "Autor":"Miguel de Cervantes",
+
+        "Editorial":"NoSocio",
+
+        "Precio":"",
+
+        "CantidadDisponible":"",
+
+        "FechaSalida":"",
+
+        "FechaPrestamo":""
+    }
+]

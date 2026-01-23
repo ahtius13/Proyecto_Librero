@@ -1,0 +1,17 @@
+[
+    {
+        "idVenta":"",
+        
+        "ISBN":"",
+
+        "idUsuario":"1",
+
+        "Cantidad":3,
+
+        "Precio":14,
+
+        "Preventa":"False",
+
+        "Descuento":0
+    }
+]

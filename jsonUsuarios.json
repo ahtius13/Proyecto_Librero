@@ -1,0 +1,29 @@
+
+[
+    {
+        "IdUsuario":1,
+
+        "Nombre":"",
+
+        "Apellido":"",
+
+        "TipodeUsuario":"NoSocio",
+
+        "Dirección":"",
+
+        "Teléfono":""
+    }, 
+    {
+        "IdUsuario":2,
+
+        "Nombre":"",
+
+        "Apellido":"",
+
+        "TipodeUsuario":"admin",
+
+        "Dirección":"",
+
+        "Teléfono":""
+    }
+]
