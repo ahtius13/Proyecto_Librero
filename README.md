@@ -75,9 +75,10 @@ Tambien permite la devolución de dichas compras, modificando de nuevo el invent
 
  -Eliminar un libro del inventario
 
- -Consultar libros (por título, autor o editorial)
+ -Consultar libros (por título, autor o editorial) la consulta puede ser realizada por todos los usuarios, los libros en preventa solo se le muestran a los Socios y al Admin
 
  -Mostrar todos los libros disponibles
+
 
 ### **Pruebas (testing)**
 
@@ -93,11 +94,13 @@ Tambien permite la devolución de dichas compras, modificando de nuevo el invent
 
 **Descripción:** Cada usuario debe tener la siguiente información:
 
+-Id Usuario
+
  -Nombre
 
  -Apellido
 
- -Tipo de usuario (socio, no socio, o admin)
+ -Tipo de usuario (Cliente, Socio, Admin)
 
  -Dirección
 
@@ -198,7 +201,7 @@ La venta reduce el stock del inventario
 
 **Descripción:** Las preventas tienen las siguientes condiciones:
 
-Solo disponibles para socios
+Solo disponibles para Socios
 
 Libros con fecha de salida 1 mes en el futuro
 
