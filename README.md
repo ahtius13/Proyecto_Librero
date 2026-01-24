@@ -1,4 +1,5 @@
-´´´
+```
+
  Proyecto_Librero/
 │
 ├── src/ 
@@ -29,7 +30,8 @@
 └── conftest.py
 │ 
 └── pytest.ini
-´´´
+
+```
 # Proyecto Librería
 
 ## Definición de Proyecto:
