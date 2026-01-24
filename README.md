@@ -1,23 +1,35 @@
+ ´´´
  Proyecto_Librero/
- │
- ├── src/ 
- │   ├── libros.py 
- │   ├── usuarios.py 
- │   ├── prestamos.py 
- │   ├── ventas.py 
- │   ├── preventas.py 
- │   ├── main.py 
- │
- ├── tests/ 
- │   ├── test_libros.py 
- │   ├── test_usuarios.py 
- │   ├── test_prestamos.py 
- │   ├── test_devoluciones.py 
- │   ├── test_ventas.py 
- │   ├── test_preventas.py 
- │ 
- └── pytest.ini
-
+│
+├── src/ 
+│   ├── libros.py 
+│   ├── usuarios.py 
+│   ├── prestamos.py 
+│   ├── ventas.py 
+│   ├── preventas.py
+│   ├── json_functions.py
+│   ├── main.py 
+│
+├── tests/
+│
+├── core/
+│   ├── test_libros.py
+│   ├── test_usuarios.py
+│   ├── test_prestamos.py
+│   ├── test_ventas.py
+│   ├── test_preventas.py
+│   └── test_devoluciones.py
+│
+├── persistence/
+│   └── test_json_functions.py
+│
+├── integration/
+│   └── test_flujos_completos.py
+│
+└── conftest.py
+│ 
+└── pytest.ini
+´´´
 # Proyecto Librería
 
 ## Definición de Proyecto:
