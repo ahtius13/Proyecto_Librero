@@ -1,4 +1,4 @@
- ´´´
+```
  Proyecto_Librero/
 │
 ├── src/ 
@@ -26,7 +26,7 @@
 │
 │ 
 └── pytest.ini
-´´´
+```
 # Proyecto Librería
 
 ## Definición de Proyecto:
