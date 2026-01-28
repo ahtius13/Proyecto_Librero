@@ -12,16 +12,16 @@
 │
 ├── tests/
 │
-├── core/
-│   ├── test_libros.py
-│   ├── test_usuarios.py
-│   ├── test_prestamos.py
-│   ├── test_ventas.py
-│   ├── test_preventas.py
-│   └── test_devoluciones.py
+|   ├── core/
+|   │   ├── test_libros.py
+|   │   ├── test_usuarios.py
+|   │   ├── test_prestamos.py
+|   │   ├── test_ventas.py
+|   │   ├── test_preventas.py
+|   │   └── test_devoluciones.py
 │
-├── persistence/
-│   └── test_json_functions.py
+|   ├── persistence/
+|   │   └── test_json_functions.py
 │
 │
 │ 
