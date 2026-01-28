@@ -9,17 +9,18 @@ class JsonFunctions:
             self._write([])
 
     def _serialize(self, obj):
-        """Convierte objetos no serializables a JSON."""
+        """Convierte objetos date a string ISO."""
         if isinstance(obj, date):
-            return obj.isoformat()  # "YYYY-MM-DD"
+            return obj.isoformat()
         raise TypeError(f"Type {type(obj)} not serializable")
 
-    def _deserialize(self, d):
-        """Convierte strings ISO a objetos date si es necesario."""
-        for item in d:
-            if "fecha_salida" in item and isinstance(item["fecha_salida"], str):
-                item["fecha_salida"] = date.fromisoformat(item["fecha_salida"])
-        return d
+    def _deserialize(self, data):
+        """Convierte strings ISO a objetos date si existen fechas."""
+        for item in data:
+            for key in ["Fecha Salida", "Fecha Prestamo"]:
+                if key in item and isinstance(item[key], str):
+                    item[key] = date.fromisoformat(item[key])
+        return data
 
     def _read(self):
         with open(self.filepath, "r", encoding="utf-8") as f:
@@ -35,3 +36,4 @@ class JsonFunctions:
 
     def save_all(self, data):
         self._write(data)
+
