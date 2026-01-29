@@ -1,5 +1,4 @@
 ```
-
  Proyecto_Librero/
 │
 ├── src/ 
@@ -13,24 +12,20 @@
 │
 ├── tests/
 │
-├── core/
-│   ├── test_libros.py
-│   ├── test_usuarios.py
-│   ├── test_prestamos.py
-│   ├── test_ventas.py
-│   ├── test_preventas.py
-│   └── test_devoluciones.py
+|   ├── core/
+|   │   ├── test_libros.py
+|   │   ├── test_usuarios.py
+|   │   ├── test_prestamos.py
+|   │   ├── test_ventas.py
+|   │   ├── test_preventas.py
+|   │   └── test_devoluciones.py
 │
-├── persistence/
-│   └── test_json_functions.py
+|   ├── persistence/
+|   │   └── test_json_functions.py
 │
-├── integration/
-│   └── test_flujos_completos.py
 │
-└── conftest.py
 │ 
 └── pytest.ini
-
 ```
 # Proyecto Librería
 
@@ -248,3 +243,57 @@ Se actualiza la cantidad disponible
 
  -Verificar que no se puede devolver un libro inexistente
 
+## Entidades
+
+### Libro
+
+- ISBN
+- Titulo
+- Autor
+- Editorial
+- Precio
+- Stock 
+- Fecha Salida
+- Fecha Prestamo
+
+### Usuarios
+
+- Id_Usuario
+- Nombre
+- Apellido
+- Dirección
+- Tlf
+- Tipo de Usuario
+
+#### Acciones
+
+En negrita las acciones que solo puede hacer el Usuario Administrador.
+Futura y opcional acción del administrador Busqueda de Ventas y de Devoluciones.
+
+- Buscar Libro
+- Comprar Libro
+- Devolver Libro
+- **Añadir Libro**
+- **Eliminar Libro**
+- **Modificar Libro**
+- **Añadir Usuario**
+- **Eliminar Usuario**
+- **Modificar Usuario**
+- **Buscar Usuario**
+
+### Venta
+
+- Id_Venta
+- Fecha_Venta
+- Id_Usuario
+- ISBN
+- Cantidad
+- Precio_total
+- Preventa
+
+### Devolución
+
+- Id_Devolución
+- Fecha_Devolución
+- Id_Venta
+- Cantidad
