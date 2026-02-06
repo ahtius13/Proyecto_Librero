@@ -162,17 +162,15 @@ También permite la devolución de dichas compras, modificando de nuevo el inven
 
 ## 4. Devolución de préstamos
 
-**Descripción:** Se deben gestionar las devoluciones de libros prestados.
+**Descripción:** Se deben gestionar las devoluciones de libros prestados por una editorial. Todos los que no se vendan en el plazo marcado deben devolverse a la Editorial.
 
 ### **Funcionalidades necesarias**
-
- -Devolver libros prestados
+-Devolver libros prestados
 
 ### **Pruebas (testing)**
-
- -Verificar que al devolver un libro a Editorial disminuye el stock
-
- -Comprobar que la fecha de préstamo se elimina o se marca como finalizada
+-Verificar que al devolver un libro a Editorial disminuye el stock de la cantidad que se devuelve.
+-Comprobar que la fecha de préstamo se elimina o se marca como finalizada.
+-Comprobar que no se pueden devolver más libros de los que hay en stock.
 
 
 ## 5. Sistema de ventas
