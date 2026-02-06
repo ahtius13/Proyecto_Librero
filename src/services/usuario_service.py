@@ -1,7 +1,9 @@
-from models.usuario import Usuario
-from persistence.json_functions import JsonFunctions
-from exceptions import usuarioDuplicado, usuarioInexistente, camposUsuarioError
-class usuario_service:
+from src.models.usuario import Usuario
+from src.persistence.json_functions import JsonFunctions
+from src.exceptions.usuarioDuplicado import UsuarioDuplicado
+from src.exceptions.usuarioInexistente import Usuarioinexistente
+from src.exceptions.camposUsuarioError import CamposUsuarioError
+class Usuario_service:
     def __init__(self):
         self.data =JsonFunctions("data/usuarios.json")
         self.usuariosJson: list=self.data.get_all()
@@ -17,24 +19,31 @@ class usuario_service:
         self.data.save_all(self.usuariosJson)
 
     def __crearUsuarioData(self, usuario:Usuario):
-        if usuario.numSocio in [diccionarioUsuario.get("numSocio") for diccionarioUsuario in self.usuariosJson]:
-            raise usuarioDuplicado(f"Ya existe un usuario con el numSocio {usuario.numSocio}")
-        usuario.idUsuario=int(self.usuariosJson[-1].idUsuario)+1
+        if usuario.numSocio in [diccionarioUsuario.get("NumSocio") for diccionarioUsuario in self.usuariosJson]:
+            raise UsuarioDuplicado(f"Ya existe un usuario con el numSocio {usuario.numSocio}")
+        #idUsuario
+        
+        if len(self.usuariosJson):
+            usuario.idUsuario=int(max([diccionarioUsuario.get("IdUsuario") for diccionarioUsuario in self.usuariosJson]))+1
+        else:
+            usuario.idUsuario=1
+
         self.usuariosJson.append(self.__fromUsuarioToDict(usuario))
 
         self.data.save_all(self.usuariosJson)
 
-    def __verificarUsuarioExistente(id, listaUsuario:list):
+    def __verificarUsuarioExistente(self, id, listaUsuario:list):
         #Evalua si existe el usuario con el id en la lista indicada y devuelve su indice en el json
         indice=""
         listaId=[usuario.get("IdUsuario") for usuario in listaUsuario]
         if id in listaId:
             indice=listaId.index(id)
         else:
-            raise usuarioInexistente(f"No hay ningun usuario con la id {id}")
+            raise Usuarioinexistente(f"No hay ningun usuario con la id {id}")
         return indice
     
-    def __fromUsuarioToDict(usuario:Usuario)->dict:
+    
+    def __fromUsuarioToDict(self, usuario:Usuario)->dict:
         diccionarioUsuario={
                 "IdUsuario":usuario.idUsuario,
 
@@ -48,12 +57,15 @@ class usuario_service:
 
                 "Teléfono":usuario.telefono,
 
-                "NumSocio":usuario.nu
+                "NumSocio":usuario.numSocio
             }
         return diccionarioUsuario
-    def __fromDictToUsuario(diccionario:dict)->Usuario:
+    
+    def __fromDictToUsuario(self, diccionario:dict)->Usuario:
         usuario=Usuario(
                 diccionario.get("IdUsuario"),
+
+                diccionario.get("NumSocio"),
 
                 diccionario.get("Nombre"),
 
@@ -63,18 +75,17 @@ class usuario_service:
 
                 diccionario.get("Dirección"),
 
-                diccionario.get("Teléfono"),
-
-                diccionario.get("NumSocio")
+                diccionario.get("Teléfono")
             )
         return usuario
         
+        #crear usuario imponiendo su id
     def crearUsuario(self, usuarioDicc:dict):
         usuario:Usuario=self.__fromDictToUsuario(usuarioDicc)
         #validaciones de reglas de negocio(duplicadoUsuarios, nombre no vacio)
         
         if usuario.tipoUsuario not in ["administrador", "socio", "no_socio"] or usuario.nombre==None:
-            raise camposUsuarioError("Campos introducidos incorrectos")
+            raise CamposUsuarioError("Campos introducidos incorrectos")
         else:
             self.__crearUsuarioData(usuario)
             
@@ -87,9 +98,10 @@ class usuario_service:
         usuario:Usuario=self.__fromDictToUsuario(datosDicc)
         #validaciones de reglas de negocio
         if usuario.tipoUsuario in ["administrador", "socio", "no_socio"] and usuario.nombre!=None:
+            usuario.idUsuario=id
             self.__modificarUsuarioData(indice, usuario)
         else:
-            raise camposUsuarioError("Campos introducidos incorrectos")
+            raise CamposUsuarioError("Campos introducidos incorrectos")
             
 
     def eliminarUsuario(self, id):
@@ -101,7 +113,7 @@ class usuario_service:
 
     def consultarUsuario(self, id):
         indice=self.__verificarUsuarioExistente(id, self.usuariosJson)
-        return self.data.get_all[indice]
+        return self.data.get_all()[indice]
     
     def consultarUsuarios(self):
         return self.data.get_all()

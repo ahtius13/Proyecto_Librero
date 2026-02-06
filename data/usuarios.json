@@ -1,0 +1,29 @@
+[
+    {
+        "IdUsuario": 1,
+        "Nombre": "admin",
+        "Apellido": "",
+        "TipodeUsuario": "administrador",
+        "Dirección": "",
+        "Teléfono": "",
+        "NumSocio": "Ad"
+    },
+    {
+        "IdUsuario": 2,
+        "Nombre": "anonimo",
+        "Apellido": "",
+        "TipodeUsuario": "no_socio",
+        "Dirección": "",
+        "Teléfono": "",
+        "NumSocio": "An"
+    },
+    {
+        "IdUsuario": 3,
+        "Nombre": "ruben",
+        "Apellido": "cano",
+        "TipodeUsuario": "socio",
+        "Dirección": "madrid",
+        "Teléfono": "664664664",
+        "NumSocio": "S01"
+    }
+]
