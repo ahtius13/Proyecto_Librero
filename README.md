@@ -79,15 +79,15 @@ También permite la devolución de dichas compras, modificando de nuevo el inven
 
 ### **Funcionalidades necesarias**
 
- -Registrar un libro nuevo al inventario
+ -Registrar un libro nuevo al inventario (POST: /libros/)
 
- -Modificar los datos de un libro existente
+ -Modificar los datos de un libro existente (PUT: /libros/)
 
- -Eliminar un libro del inventario
+ -Eliminar un libro del inventario (DELETE: /libros/)
 
- -Consultar libros (por título, autor o editorial) --> Función de socio
+ -Consultar libros (por título, autor o editorial) --> Función de socio (GET: /libros/ISBN)
 
- -Mostrar todos los libros disponibles --> Función de socio
+ -Mostrar todos los libros disponibles --> Función de socio (GET: /libros/all)
 
 ### **Pruebas (testing)**
 
@@ -118,13 +118,13 @@ También permite la devolución de dichas compras, modificando de nuevo el inven
 
 ### **Funcionalidades necesarias**
 
- -Añadir un nuevo socio
+ -Añadir un nuevo socio (POST: /usuarios/)
 
- -Modificar los datos de un socio
+ -Modificar los datos de un socio (PUT: /usuarios/numero_socio)
 
- -Eliminar un socio
+ -Eliminar un socio (DELETE: /usuarios/numero_socio)
 
- -Consultar información de un socio
+ -Consultar información de un socio (GET: /usuarios/numero_socio)
 
  -Mostrar la lista completa de socios
 
@@ -144,13 +144,13 @@ También permite la devolución de dichas compras, modificando de nuevo el inven
 
 ### **Funcionalidades necesarias**
 
- -Registrar un préstamo de uno o varios libros.
+ -Registrar un préstamo de uno o varios libros. (POST: prestamos/)
 
- -Controlar la duración del préstamo.
+ -Controlar la duración del préstamo. 
 
- -Mostrar préstamos activos.
+ -Mostrar préstamos activos. (GET: prestamos/)
 
- -Detectar préstamos que están finalizados.
+ -Detectar préstamos que están finalizados. (GET: prestamos/finalizados)
 
 ### **Pruebas (testing)**
 
@@ -165,7 +165,7 @@ También permite la devolución de dichas compras, modificando de nuevo el inven
 **Descripción:** Se deben gestionar las devoluciones de libros prestados por una editorial. Todos los que no se vendan en el plazo marcado deben devolverse a la Editorial.
 
 ### **Funcionalidades necesarias**
--Devolver libros prestados
+-Devolver libros prestados (POST: /devolucion/prestamos/ISBN)
 
 ### **Pruebas (testing)**
 -Verificar que al devolver un libro a Editorial disminuye el stock de la cantidad que se devuelve.
@@ -187,7 +187,7 @@ La venta reduce el stock del inventario
 
 ### **Funcionalidades necesarias**
 
- -Comprar un libro (Aplicar descuento si el comprador es socio) --> Función de socio
+ -Comprar un libro (Aplicar descuento si el comprador es socio) --> Función de socio (POST: /ventas/ISBN)
 
 
 ### **Pruebas (testing)**
@@ -210,7 +210,7 @@ Cantidad limitada disponible para preventa
 
 ### **Funcionalidades necesarias**
 
- -Reservar una preventa --> Función de socio
+ -Reservar una preventa --> Función de socio (POST: preventa/ISBN)
  
 
 ### **Pruebas (testing)**
@@ -233,7 +233,7 @@ Se actualiza la cantidad disponible
 
 ### **Funcionalidades necesarias**
 
- -Registrar una devolución de compra
+ -Registrar una devolución de compra (POST: /devolucion/compra/ISBN)
 
  ### **Pruebas (testing)**
 
