@@ -3,4 +3,4 @@ from routers import usuario_router
 
 app=FastAPI()
 
-app.include_router(usuario_router)
+app.include_router(usuario_router.router)

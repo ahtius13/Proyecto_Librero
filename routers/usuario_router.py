@@ -4,11 +4,11 @@ from src.usuarios import Usuario, UsuarioManager
 from exceptions.recursoYaExistenteException import RecursoYaExistenteException
 from exceptions.recursoInexistenteException import RecursoInexistenteException
 
-router=APIRouter(prefix="/usuario", tags="USUARIO")
+router=APIRouter(prefix="/usuario", tags=["USUARIO"])
 
 #USUARIOS
 
-@router.post("/", codigoEstado=status.HTTP_201_CREATED)
+@router.post("/", status_code=status.HTTP_201_CREATED)
 def crear_usuario(usuario_model:Usuario_model) :
     #crea un nuevo usuario indicado en el json
     usuario_manager=UsuarioManager()
@@ -22,14 +22,14 @@ def crear_usuario(usuario_model:Usuario_model) :
         raise RecursoYaExistenteException("usuario",usuario.numero_socio)
     
 
-@router.get("/", codigoEstado=status.HTTP_200_OK)
+@router.get("/", status_code=status.HTTP_200_OK)
 def ver_usuarios() :
     #devuelve todos los usuarios guardados.
     usuario_manager=UsuarioManager()
     listaUsuariosJSON=[usuario.to_dict() for usuario in usuario_manager.mostrar_todos()]
     return listaUsuariosJSON
 
-@router.get("/{numSocio}", codigoEstado=status.HTTP_200_OK)
+@router.get("/{numSocio}", status_code=status.HTTP_200_OK)
 def ver_usuario(numSocio) :
     #ver informacion sobre usuario con el numSocio indicado.
     usuario_manager=UsuarioManager()
@@ -41,7 +41,7 @@ def ver_usuario(numSocio) :
     except ValueError:
         raise RecursoInexistenteException("usuario", numSocio)
 
-@router.put("/{numSocio}", codigoEstado=status.HTTP_200_OK)
+@router.put("/{numSocio}", status_code=status.HTTP_200_OK)
 def modificar_usuario(numSocio, usuario_model:Usuario_model) :
     #modifica usuario con el numsocio indicado con el contenido indicado en el JSON
     usuario_manager=UsuarioManager()
@@ -55,7 +55,7 @@ def modificar_usuario(numSocio, usuario_model:Usuario_model) :
     except ValueError:
         raise RecursoInexistenteException("usuario", numSocio)
     
-@router.delete("/{numSocio}", codigoEstado=status.HTTP_200_OK)
+@router.delete("/{numSocio}", status_code=status.HTTP_200_OK)
 def eliminar_usuario(numSocio) :
     #elimina usuario con el numSocio indicado.
     usuario_manager=UsuarioManager()
