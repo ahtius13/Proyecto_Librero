@@ -1,1 +1,0 @@
-hacer el id autoincremental y no se pueda indicar a la hjora de crear usuario sino que se genere.
