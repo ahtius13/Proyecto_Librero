@@ -27,6 +27,7 @@ def ver_usuarios() :
     #devuelve todos los usuarios guardados.
     usuario_manager=UsuarioManager()
     listaUsuariosJSON=[usuario.to_dict() for usuario in usuario_manager.mostrar_todos()]
+    print(listaUsuariosJSON)
     return listaUsuariosJSON
 
 @router.get("/{numSocio}", status_code=status.HTTP_200_OK)
@@ -51,7 +52,9 @@ def modificar_usuario(numSocio, usuario_model:Usuario_model) :
 
         if numSocio != usuario_model.numero_socio:
             raise HTTPException(400, "no se puede cambiar el numero de socio de un usuario")
-        usuario_manager.modificar_usuario(numSocio, usuario_model.nombre, usuario_model.apellido,usuario_model.numero_socio, usuario_model.tipo, usuario_model.direccion, usuario_model.telefono)
+        
+        usuario_manager.modificar_usuario(numsocio=numSocio, nombre=usuario_model.nombre, apellido=usuario_model.apellido,numero_socio=usuario_model.numero_socio, tipo=usuario_model.tipo, direccion=usuario_model.direccion, telefono=usuario_model.telefono)
+        return {"message":f"el usuario con identificador {numSocio} ha sido moficado"}
     except ValueError:
         raise RecursoInexistenteException("usuario", numSocio)
     
@@ -60,11 +63,11 @@ def eliminar_usuario(numSocio) :
     #elimina usuario con el numSocio indicado.
     usuario_manager=UsuarioManager()
     
-    usuario_manager=UsuarioManager()
     try:
         #Comprobando si existe con try
         usuario_manager.consultar_usuario(numSocio)
 
-        usuario_manager.eliminar_usuario()
+        usuario_manager.eliminar_usuario(numSocio)
+        return {"message":f"el usuario con identificador {numSocio} ha sido eliminado"}
     except ValueError:
         raise RecursoInexistenteException("usuario", numSocio)
