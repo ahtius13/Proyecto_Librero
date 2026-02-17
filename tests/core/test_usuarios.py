@@ -1,9 +1,15 @@
+from fastapi import Response
 import pytest
 from src.usuarios import Usuario, UsuarioManager
 import pytest
 from src.usuarios import Usuario, UsuarioManager
 from pathlib import Path
 from src.persistence.json_functions import JsonFunctions
+from fastapi.testclient import TestClient
+from main import app
+
+
+client=TestClient(app)
 
 @pytest.fixture
 def usuario_manager(tmp_path):
@@ -43,3 +49,17 @@ def test_eliminar(usuario_manager):
     usuario_manager.anadir_usuario(usuario)
     usuario_manager.eliminar_usuario("SOC")
     assert len(usuario_manager.usuarios) == 0
+
+#Valicaciones endpoints
+def test_endpoint_crearUsuario():
+    numSocio="SOC002"
+    respuesta:Response=client.post("/usuario", json={
+  "nombre": "ruben",
+  "apellido": "a",
+  "numero_socio": numSocio,
+  "tipo": "socio",
+  "direccion": "string",
+  "telefono": "string"
+})
+    assert respuesta.status_code==201
+    assert next(iter([usuario for usuario in UsuarioManager().mostrar_todos() if usuario.numero_socio==numSocio]), False)

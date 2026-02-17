@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "nombre": "ruben",
+        "apellido": "a",
+        "numero_socio": "SOC002",
+        "tipo": "socio",
+        "direccion": "string",
+        "telefono": "string"
+    }
+]

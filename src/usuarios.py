@@ -45,6 +45,7 @@ class UsuarioManager:
         if any(u.numero_socio == usuario.numero_socio for u in self.usuarios):
             raise ValueError("Número de socio duplicado")
         self.usuarios.append(usuario)
+        self._guardar_usuarios()
 
     def modificar_usuario(self, numsocio: str, **kwargs):
         for usuario in self.usuarios:
