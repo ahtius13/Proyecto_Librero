@@ -75,3 +75,25 @@ def test_endpoint_verUsuario():
     json:dict=respuesta.json()
     assert respuesta.status_code==200
     assert json.get("nombre")=="ruben"
+
+def test_endpoint_verUsuario():
+    manager=UsuarioManager()
+    numSocio="SociPruebaVer"
+    manager.eliminar_usuario(numSocio)
+    manager.anadir_usuario(Usuario("ruben","a",numSocio,"socio","string", "string"))
+    respuesta:Response=client.get(f"usuario/{numSocio}")
+    json:dict=respuesta.json()
+    assert respuesta.status_code==200
+    assert json.get("nombre")=="ruben"
+
+def test_endpoint_verUsuarios():
+    manager=UsuarioManager()
+    numSocio="SociPruebaVer"
+    manager.eliminar_usuario(numSocio)
+
+    manager.anadir_usuario(Usuario("ruben","a",numSocio,"socio","string", "string"))
+    respuesta:Response=client.get(f"usuario")
+    json:dict=respuesta.json()
+    assert respuesta.status_code==200
+    personasConNombre=[diccionario for diccionario in json if diccionario.get("numero_socio")==numSocio]
+    assert len(personasConNombre)
