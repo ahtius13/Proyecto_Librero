@@ -64,8 +64,8 @@ class Libro:
         )
 
 class LibroManager:
-    def __init__(self):
-        self.json_handler = JsonFunctions("data/libros.json")
+    def __init__(self, filepath: str = "data/libros.json"):
+        self.json_handler = JsonFunctions(filepath)
         self.libros = self._cargar_libros()
 
     def _cargar_libros(self) -> List[Libro]:

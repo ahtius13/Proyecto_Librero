@@ -3,7 +3,7 @@ from typing import List
 from src.libros import LibroManager
 
 class PrestamoManager:
-    def __init__(self, libro_manager: LibroManager):
+    def __init__(self, libro_manager, filepath="data/prestamos.json"):
         self.libro_manager = libro_manager
 
     def registrar_prestamo(self, codigo_libro: str, cantidad: int, duracion_dias: int):
