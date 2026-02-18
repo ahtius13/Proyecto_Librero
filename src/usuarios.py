@@ -30,7 +30,16 @@ class Usuario:
 
 class UsuarioManager:
     def __init__(self):
-        self.json_handler = JsonFunctions("data/usuarios.json")
+        self.__json_handler = JsonFunctions("data/usuarios.json")
+        self.usuarios = self._cargar_usuarios()
+
+    @property
+    def json_handler(self):
+        return self.__json_handler
+
+    @json_handler.setter
+    def json_handler(self, valor):
+        self.__json_handler=valor
         self.usuarios = self._cargar_usuarios()
 
     def _cargar_usuarios(self) -> List[Usuario]:

@@ -14,8 +14,8 @@ client=TestClient(app)
 @pytest.fixture
 def usuario_manager(tmp_path):
     class TestJsonFunctions:
-        def __init__(self, filepath):
-            self.handler = JsonFunctions(Path(tmp_path) / "usuarios.json")
+        def __init__(self):
+            self.handler = JsonFunctions(Path(tmp_path) / "USUARIO.json")
 
         def get_all(self):
             return self.handler.get_all()
@@ -24,7 +24,7 @@ def usuario_manager(tmp_path):
             self.handler.save_all(data)
 
     manager = UsuarioManager()
-    manager.json_handler = TestJsonFunctions("data/usuarios.json").handler
+    manager.json_handler = TestJsonFunctions().handler
     return manager
 
 def test_no_duplicados(usuario_manager):
@@ -52,7 +52,9 @@ def test_eliminar(usuario_manager):
 
 #Valicaciones endpoints
 def test_endpoint_crearUsuario():
-    numSocio="SOC002"
+    manager=UsuarioManager()
+    numSocio="SociPruebaCrear"
+    manager.eliminar_usuario(numSocio)
     respuesta:Response=client.post("/usuario", json={
   "nombre": "ruben",
   "apellido": "a",
@@ -63,3 +65,13 @@ def test_endpoint_crearUsuario():
 })
     assert respuesta.status_code==201
     assert next(iter([usuario for usuario in UsuarioManager().mostrar_todos() if usuario.numero_socio==numSocio]), False)
+
+def test_endpoint_verUsuario():
+    manager=UsuarioManager()
+    numSocio="SociPruebaVer"
+    manager.eliminar_usuario(numSocio)
+    manager.anadir_usuario(Usuario("ruben","a",numSocio,"socio","string", "string"))
+    respuesta:Response=client.get(f"usuario/{numSocio}")
+    json:dict=respuesta.json()
+    assert respuesta.status_code==200
+    assert json.get("nombre")=="ruben"

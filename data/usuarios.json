@@ -6,5 +6,21 @@
         "tipo": "socio",
         "direccion": "string",
         "telefono": "string"
+    },
+    {
+        "nombre": "ruben",
+        "apellido": "a",
+        "numero_socio": "SociPruebaCrear",
+        "tipo": "socio",
+        "direccion": "string",
+        "telefono": "string"
+    },
+    {
+        "nombre": "ruben",
+        "apellido": "a",
+        "numero_socio": "SociPruebaVer",
+        "tipo": "socio",
+        "direccion": "string",
+        "telefono": "string"
     }
 ]
