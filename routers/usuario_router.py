@@ -18,7 +18,7 @@ def crear_usuario(usuario_model:Usuario_model) :
         usuario_manager.anadir_usuario(usuario)
 
         return {"message":f"el usuario con identificador {usuario.numero_socio} ha sido creado"}
-    except ValueError():
+    except ValueError:
         raise RecursoYaExistenteException("usuario",usuario.numero_socio)
     
 
@@ -53,7 +53,7 @@ def modificar_usuario(numSocio, usuario_model:Usuario_model) :
         if numSocio != usuario_model.numero_socio:
             raise HTTPException(400, "no se puede cambiar el numero de socio de un usuario")
         
-        usuario_manager.modificar_usuario(numsocio=numSocio, nombre=usuario_model.nombre, apellido=usuario_model.apellido,numero_socio=usuario_model.numero_socio, tipo=usuario_model.tipo, direccion=usuario_model.direccion, telefono=usuario_model.telefono)
+        usuario_manager.modificar_usuario(numsocio=numSocio, nombre=usuario_model.nombre, apellido=usuario_model.apellido, tipo=usuario_model.tipo, direccion=usuario_model.direccion, telefono=usuario_model.telefono)
         return {"message":f"el usuario con identificador {numSocio} ha sido moficado"}
     except ValueError:
         raise RecursoInexistenteException("usuario", numSocio)
@@ -64,7 +64,7 @@ def eliminar_usuario(numSocio) :
     usuario_manager=UsuarioManager()
     
     try:
-        #Comprobando si existe con try
+        #Comprobando si existe con try catch
         usuario_manager.consultar_usuario(numSocio)
 
         usuario_manager.eliminar_usuario(numSocio)

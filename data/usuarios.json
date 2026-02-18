@@ -1,14 +1,5 @@
 [
     {
-<<<<<<< HEAD
-        "nombre": "ruben",
-        "apellido": "a",
-        "numero_socio": "SOC002",
-        "tipo": "socio",
-        "direccion": "string",
-        "telefono": "string"
-    },
-    {
         "nombre": "ruben",
         "apellido": "a",
         "numero_socio": "SociPruebaCrear",
@@ -23,8 +14,21 @@
         "tipo": "socio",
         "direccion": "string",
         "telefono": "string"
-=======
-        
->>>>>>> dev
+    },
+    {
+        "nombre": "ruben",
+        "apellido": "a",
+        "numero_socio": "SociPruebaVertodos",
+        "tipo": "socio",
+        "direccion": "string",
+        "telefono": "string"
+    },
+    {
+        "nombre": "manolo",
+        "apellido": "a",
+        "numero_socio": "SociPruebaModificar",
+        "tipo": "socio",
+        "direccion": "string",
+        "telefono": "string"
     }
 ]
