@@ -1,31 +1,51 @@
 ```
- Proyecto_Librero/
-│
-├── src/ 
-│   ├── libros.py 
-│   ├── usuarios.py 
-│   ├── prestamos.py 
-│   ├── ventas.py 
-│   ├── preventas.py
-│   ├── json_functions.py
-│   ├── main.py 
-│
+proyecto_libreria/
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── libro.py
+│   │   ├── usuario.py
+│   │   ├── prestamo.py
+│   │   ├── venta.py
+│   │   └── preventa.py
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── libros.py
+│   │   ├── usuarios.py
+│   │   ├── prestamos.py
+│   │   ├── ventas.py
+│   │   └── preventas.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── libro_service.py
+│   │   ├── usuario_service.py
+│   │   ├── prestamo_service.py
+│   │   ├── venta_service.py
+│   │   └── preventa_service.py
+│   ├── persistence/
+│   │   ├── __init__.py
+│   │   └── json_functions.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py
+│   └── exceptions/
+│       ├── __init__.py
+│       └── custom_exceptions.py
+├── data/
+│   ├── libros.json
+│   └── usuarios.json
 ├── tests/
-│
-|   ├── core/
-|   │   ├── test_libros.py
-|   │   ├── test_usuarios.py
-|   │   ├── test_prestamos.py
-|   │   ├── test_ventas.py
-|   │   ├── test_preventas.py
-|   │   └── test_devoluciones.py
-│
-|   ├── persistence/
-|   │   └── test_json_functions.py
-│
-│
-│ 
-└── pytest.ini
+│   ├── __init__.py
+│   ├── test_libros.py
+│   ├── test_usuarios.py
+│   ├── test_prestamos.py
+│   ├── test_ventas.py
+│   └── test_preventas.py
+├── requirements.txt
+└── README.md
+
 ```
 # Proyecto Librería
 
