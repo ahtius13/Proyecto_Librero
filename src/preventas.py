@@ -9,7 +9,7 @@ class PreventaManager:
 
     def registrar_preventa(self, numero_socio: str, codigo_libro: str, cantidad: int):
         usuario = self.usuario_manager.consultar_usuario(numero_socio)
-        if usuario.tipo != "socio":
+        if usuario.tipo not in ("socio", "admin"):
             raise ValueError("Solo socios pueden hacer preventas")
         libro = next((l for l in self.libro_manager.libros if l.codigo == codigo_libro), None)
         if not libro:
