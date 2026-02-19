@@ -5,6 +5,7 @@ import datetime
 from src.preventas import PreventaManager
 from src.libros import LibroManager, Libro
 from src.usuarios import UsuarioManager, Usuario
+from main import app
 
 client=TestClient(app)
 
@@ -73,6 +74,31 @@ def test_no_mas_cuando_cero(preventa_manager, libro_manager, usuario_manager):
         preventa_manager.registrar_preventa("SOC", "COD", 1)
 
 #VALIDACIONES ENDPOINTS
+def test_endpoint_crearPreventa():
+    libroManager=LibroManager()
+    usuarioManager=UsuarioManager()
+
+    numSocio="SociPruebaPreventa"
+    numLibro="COD"
+
+    libro = Libro(
+        "Libro", "Autor", numLibro, "Edit", 10.0, cantidad=2,
+        fecha_salida=datetime.date.today() + datetime.timedelta(days=40)
+    )
+    usuario = Usuario("Nombre", "Apellido", numSocio, "socio", "Dir", "Tel")
+
+    usuarioManager.eliminar_usuario(numSocio)
+    usuarioManager.anadir_usuario(usuario)
+
+    libroManager.eliminar_libro(numLibro)
+    libroManager.registrar_libro(libro)
+
+    respuesta:Response=client.post(f"preventa", json={
+        "numero_socio":numSocio,
+        "ISBN":numLibro,
+        "cantidad":1})
+    assert respuesta.status_code==201
+
 def test_endpoint_crearPreventa_UsuarioInexistente():
     libroManager=LibroManager()
     numSocio="SocioInexistente"
@@ -126,7 +152,7 @@ def test_endpoint_crearPreventa_LibroSinStock():
         "numero_socio":numSocio,
         "ISBN":numLibro,
         "cantidad":1})
-    assert respuesta.status_code==404
+    assert respuesta.status_code==400
 
 def test_endpoint_crearPreventa_UsuarioNoSocio():
     libroManager=LibroManager()
@@ -151,7 +177,7 @@ def test_endpoint_crearPreventa_UsuarioNoSocio():
         "numero_socio":numUsuario,
         "ISBN":numLibro,
         "cantidad":1})
-    assert respuesta.status_code==404
+    assert respuesta.status_code==400
 
 def test_endpoint_crearPreventa_LibroFechaActual():
     libroManager=LibroManager()
@@ -176,4 +202,4 @@ def test_endpoint_crearPreventa_LibroFechaActual():
         "numero_socio":numSocio,
         "ISBN":numLibro,
         "cantidad":1})
-    assert respuesta.status_code==404
+    assert respuesta.status_code==400
