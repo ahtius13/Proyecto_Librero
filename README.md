@@ -3,13 +3,6 @@ proyecto_libreria/
 ├── src/
 │   ├── __init__.py
 │   ├── main.py
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── libro.py
-│   │   ├── usuario.py
-│   │   ├── prestamo.py
-│   │   ├── venta.py
-│   │   └── preventa.py
 │   ├── routes/
 │   │   ├── __init__.py
 │   │   ├── libros.py
@@ -17,27 +10,20 @@ proyecto_libreria/
 │   │   ├── prestamos.py
 │   │   ├── ventas.py
 │   │   └── preventas.py
-│   ├── services/
-│   │   ├── __init__.py
-│   │   ├── libro_service.py
-│   │   ├── usuario_service.py
-│   │   ├── prestamo_service.py
-│   │   ├── venta_service.py
-│   │   └── preventa_service.py
+│   ├── libros.py
+│   │── usuarios.py
+│   │── prestamos.py
+│   │── ventas.py
+│   │── preventas.py
 │   ├── persistence/
 │   │   ├── __init__.py
 │   │   └── json_functions.py
-│   ├── config/
-│   │   ├── __init__.py
-│   │   └── settings.py
-│   └── exceptions/
-│       ├── __init__.py
-│       └── custom_exceptions.py
 ├── data/
 │   ├── libros.json
 │   └── usuarios.json
 ├── tests/
 │   ├── __init__.py
+│   ├── test_api.py
 │   ├── test_libros.py
 │   ├── test_usuarios.py
 │   ├── test_prestamos.py
