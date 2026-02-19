@@ -15,7 +15,7 @@ def registrarVenta(preventa_model:Preventa_model):
     libro_manager=LibroManager()
     #verificando que esxista
     try:
-        usuario_manager.consultar_usuario()
+        usuario_manager.consultar_usuario(numUsuario)
     except ValueError:
         raise RecursoInexistenteException("usuario", numUsuario)
 

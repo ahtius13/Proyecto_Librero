@@ -1,5 +1,18 @@
 [
     {
-        
+        "nombre": "Nombre",
+        "apellido": "Apellido",
+        "numero_socio": "SociPruebaPreventaNoSocio",
+        "tipo": "no_socio",
+        "direccion": "Dir",
+        "telefono": "Tel"
+    },
+    {
+        "nombre": "Nombre",
+        "apellido": "Apellido",
+        "numero_socio": "SociPruebaPreventa",
+        "tipo": "socio",
+        "direccion": "Dir",
+        "telefono": "Tel"
     }
 ]

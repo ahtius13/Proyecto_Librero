@@ -137,7 +137,7 @@ def test_endpoint_crearPreventa_LibroSinStock():
     numLibro="COD"
 
     libro = Libro(
-        "Libro", "Autor", numLibro, "Edit", 10.0, cantidad=0,
+        "Libro", "Autor", numLibro, "Edit", 10.0, cantidad=1,
         fecha_salida=datetime.date.today() + datetime.timedelta(days=40)
     )
     libroManager.eliminar_libro(numLibro)
@@ -151,7 +151,7 @@ def test_endpoint_crearPreventa_LibroSinStock():
     respuesta:Response=client.post(f"preventa", json={
         "numero_socio":numSocio,
         "ISBN":numLibro,
-        "cantidad":1})
+        "cantidad":2})
     assert respuesta.status_code==400
 
 def test_endpoint_crearPreventa_UsuarioNoSocio():
