@@ -306,3 +306,9 @@ Futura y opcional acción del administrador Busqueda de Ventas y de Devoluciones
 ## clonar repositorio
 para ello tendrá que tener instalado git
 ``git clone https://github.com/ahtius13/Proyecto_Librero.git´´
+
+## Posicionarse en el proyecto
+``cd PROYECTO_LIBRERO``
+
+## arrancar un contenedor con la imagen subida.
+``docker compose up``
