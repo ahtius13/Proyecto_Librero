@@ -1,0 +1,8 @@
+fastapi
+freezegun
+httpx
+pydantic
+pydantic_core
+pytest
+starlette
+uvicorn
