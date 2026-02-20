@@ -301,3 +301,8 @@ Futura y opcional acción del administrador Busqueda de Ventas y de Devoluciones
 - Fecha_Devolución
 - Id_Venta
 - Cantidad
+
+# Docker
+## clonar repositorio
+para ello tendrá que tener instalado git
+``git clone https://github.com/ahtius13/Proyecto_Librero.git´´
